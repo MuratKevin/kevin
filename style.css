@@ -682,7 +682,6 @@ p{
         cursor: pointer;
       }
       
-      /* Désactiver l'animation de base lorsque la fenêtre modale est active */
       .login-modal.active + .login-button {
         transition: none;
       }
