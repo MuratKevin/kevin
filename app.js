@@ -33,27 +33,35 @@ window.addEventListener("DOMContentLoaded", function() {
   };
   xhttp.open("GET", "index2.html", true);
   xhttp.send();
-});
+  $(document).ready(function() {
+	$(document).ready(function() {
+		$('.login-button').click(function() {
+		  $('.login-modal').addClass('active');
+		});
+	  
+		$('.close-button').click(function() {
+		  $('.login-modal').removeClass('active');
+		});
+	  
+		$('#login-form').submit(function(event) {
+		  event.preventDefault();
 
-$(document).ready(function() {
-	$('.nav-link').click(function() {
-	  $('.nav-link').removeClass('active');
-	  $(this).addClass('active');
-	  var target = $(this).data('target');
-	  $('.page-section').removeClass('active');
-	  $('#' + target).addClass('active');
-	});
-  
-	$('.menu-toggle').click(function() {
-	  $('.sidebar').toggleClass('active');
-	  $(this).toggleClass('active');
-	});
-  
-	$('.login-button').click(function() {
-	  $('.login-modal').addClass('active');
-	});
-  
-	$('.close-button').click(function() {
-	  $('.login-modal').removeClass('active');
-	});
+		  var formData = $(this).serialize();
+	  
+		  $.ajax({
+			type: 'POST',
+			url: 'login.php',
+			data: formData,
+			success: function(response) {
+			  alert(response);
+			},
+			error: function() {
+			  alert('Une erreur est survenue lors de la connexion.');
+			}
+		  });
+	  
+		  $('.login-modal').removeClass('active');
+		});
+	  });
+  });
 });
