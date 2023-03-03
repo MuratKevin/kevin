@@ -16,14 +16,16 @@
                 </div>
                 <div class="nav-list">
                     <div class="hamburger"><div class="bar"></div></div>
+                    <nav>
                     <ul>
                         <li><a href="#hero" data-after="Home">Accueil</a></li>
                         <li><a href="#presentation" data-after="presentation">Présentation</a></li>
                         <li><a href="index2.html" data-after="Projects">Projet</a></li>
                         <li><a href="#about" data-after="About">A propos</a></li>
                         <li><a href="#contact" data-after="Contact">Contact</a></li>
-                        <li><a href="#login" data-after="login">login</a></li>
+                        <button class="login-button">Login</button>
                     </ul>
+                </nav>
                 </div>
             </div>
         </div>
@@ -98,23 +100,46 @@
                         <h2>murat.kevin.idf@gmail.com</h2>
                     </div>
                 </div>
+                <section class="comment-section">
+                    <h2>Commentaires</h2>
+                    <form class="comment-form">
+                      <label for="comment-name">Nom :</label>
+                      <input type="text" id="comment-name" name="name" required>
+                      <label for="comment-email">Adresse e-mail :</label>
+                      <input type="email" id="comment-email" name="email" required>
+                      <label for="comment-message">Message :</label>
+                      <textarea id="comment-message" name="message" rows="5" required></textarea>
+                      <button type="submit">Envoyer</button>
+                    </form>
+                    <ul class="comment-list">
+                      <li>
+                        <h3>Nom de l'utilisateur</h3>
+                        <p>Le message de l'utilisateur</p>
+                      </li>
+                      <li>
+                        <h3>Nom de l'utilisateur</h3>
+                        <p>Le message de l'utilisateur</p>
+                      </li>
+                      <!-- Répétez la structure de la liste pour afficher plus de commentaires -->
+                    </ul>
+                  </section>
+                
+                    <div class="login-modal">
+                         <div class="login-modal-content">
+                          <h2>Login</h2>
+                          <p>Veuillez entrer vos identifiants pour accéder à votre compte.</p>
+                         <form id="login-form">
+                             <label for="username">Nom d'utilisateur :</label>
+                             <input type="text" id="username" name="username">
+                             <label for="password">Mot de passe :</label>
+                             <input type="password" id="password" name="password">
+                             <button type="submit">Connexion</button>
+                         </form>
+                         <button class="close-button">x</button>
+                     </div>
+                 </div>
             </div>
         </div>
-    </section>
-    <section id="login">
-        <div class="login-modal">
-            <div class="login-modal-content">
-              <h2>Login</h2>
-              <p>Veuillez entrer vos identifiants pour accéder à votre compte.</p>
-              <form>
-                <label for="username">Nom d'utilisateur :</label>
-                <input type="text" id="username" name="username">
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="password">
-                <button type="submit">Connexion</button>
-              </form>
-              <button class="close-button">x</button>
-            </div>
     </section>
     <section id="footer">
         <div class="footer container">
